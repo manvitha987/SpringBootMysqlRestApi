@@ -37,6 +37,7 @@ public class EmpStoreController {
 	@RequestMapping(value="/save",method=RequestMethod.POST,consumes="application/json",
 			produces= {"application/json","application/xml"})
 	public ResponseEntity<Employee> saveEmp(@Valid @RequestBody Employee emp) throws DatabaseException{
+		System.out.println("This is from app branch");
 		Employee savedEmp=service.saveEmp(emp);
 		return new ResponseEntity<Employee>(savedEmp,HttpStatus.CREATED);
 	}
