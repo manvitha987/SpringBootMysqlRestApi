@@ -29,7 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		try {
 			emp = dao.save(emp);
 		} catch (DataAccessException e) {
-			throw new DatabaseException("Some issue with database!! "+e.getMessage());
+			throw new DatabaseException("Some issues with My database!! "+e.getMessage());
 		}
 		return emp;
 	}
@@ -42,7 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 			throw new RecordNotFoundException("Employee not found with given id : " + id);
 		try {
 			dao.deleteById(id);
-			return "The Employee with id :" + id + " deleted";
+			return "The Employee with id :" + id + " is deleted";
 		} catch (DataAccessException e) {
 			throw new DatabaseException("Some issue with database!! "+e.getMessage());
 		}
