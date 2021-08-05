@@ -30,6 +30,7 @@ public class EmpReadController {
 	response = Employee.class)
 	public ResponseEntity<Employee> getEmp(@PathVariable int id) throws DatabaseException {
 		Employee obj=service.getEmpById(id);
+		System.out.println("Modified EmpReadController");
 		return new ResponseEntity<Employee>(obj,HttpStatus.OK);
 	}
 	
@@ -37,6 +38,7 @@ public class EmpReadController {
 	@ApiOperation(value = "Find All the Employee", notes = "Provides all the employee records")
 	public ResponseEntity<List<Employee>> getAllEmp() throws DatabaseException  {
 		List<Employee> list=service.getAllEmp();
+		System.out.println("Modified EmpReadController"+list);
 		return new ResponseEntity<List<Employee>>(list,HttpStatus.OK);
 	}
 	
